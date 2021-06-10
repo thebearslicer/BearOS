@@ -12,7 +12,7 @@ namespace CosmosOS
             var input = Console.ReadLine();
 
             double calcAnswer;
-            string date_String = "today";
+
 
             switch (input)
             {
@@ -20,7 +20,7 @@ namespace CosmosOS
                     Console.Clear();
                     break;
                 case "time":
-                    Console.WriteLine(date_String);
+                    Console.WriteLine(CreateTimeString());
                     break;
                 case "calc":
                     try
@@ -34,7 +34,7 @@ namespace CosmosOS
                         Console.WriteLine("\nError in calculator\n");
                     }
                     break;
-                case "exit":
+                case "shutdown":
                     System.Environment.Exit(1);
                     break;
                 default:
@@ -44,19 +44,26 @@ namespace CosmosOS
         }
         public static string CreateTimeString()
         {
-            byte byte_seconds = Cosmos.HAL.RTC.Second;
-            byte byte_minutes = Cosmos.HAL.RTC.Minute;
-            byte byte_hours = Cosmos.HAL.RTC.Hour;
-            byte byte_date = Cosmos.HAL.RTC.DayOfTheMonth;          //Cosmos.HAL.RTC.whatever returns a byte of the time/day or whatever you put into it
-            byte byte_day = Cosmos.HAL.RTC.DayOfTheWeek;
-            byte byte_month = Cosmos.HAL.RTC.Month;
-            byte byte_year = Cosmos.HAL.RTC.Year;
+            //byte byte_seconds = Cosmos.HAL.RTC.Second;
+            //byte byte_minutes = Cosmos.HAL.RTC.Minute;
+            //byte byte_hours   = Cosmos.HAL.RTC.Hour;
+            //byte byte_date    = Cosmos.HAL.RTC.DayOfTheMonth; //Cosmos.HAL.RTC.whatever returns a byte of the time/day or whatever you put into it
+            //byte byte_day     = Cosmos.HAL.RTC.DayOfTheWeek;
+            //byte byte_month   = Cosmos.HAL.RTC.Month;
+            //byte byte_year    = Cosmos.HAL.RTC.Year;
 
-            string seconds = Convert.ToString(byte_seconds);       //use Convert.ToString to convert
-                                                                    
+            //string seconds    = byte_seconds.ToString();
+            //string minutes    = byte_minutes.ToString();
+            //string hours      = byte_hours.ToString();
+            //string date       = byte_date.ToString();
+            //string day        = byte_day.ToString();
+            //string month      = byte_month.ToString();
+            //string year       = byte_year.ToString();
+            //put strings together to make something nice
+            string final_string = "It is " + Cosmos.HAL.RTC.DayOfTheWeek + ", " + Cosmos.HAL.RTC.Month + "" + Cosmos.HAL.RTC.DayOfTheMonth + "" + Cosmos.HAL.RTC.Year + "at " + Cosmos.HAL.RTC.Hour + ":" + Cosmos.HAL.RTC.Minute + ":" + Cosmos.HAL.RTC.Second;
 
-
-                                                                   //put strings together to make something nice
+            return final_string;
+                                                                                                                               
         }
     }
     
