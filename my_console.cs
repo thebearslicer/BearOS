@@ -60,8 +60,7 @@ namespace CosmosOS
             //string month      = byte_month.ToString();
             //string year       = byte_year.ToString();
             //put strings together to make something nice
-            string final_string = "It is " + Cosmos.HAL.RTC.DayOfTheWeek + ", " + Cosmos.HAL.RTC.Month + "" + Cosmos.HAL.RTC.DayOfTheMonth + "" + Cosmos.HAL.RTC.Year + "at " + Cosmos.HAL.RTC.Hour + ":" + Cosmos.HAL.RTC.Minute + ":" + Cosmos.HAL.RTC.Second;
-
+            string final_string = "It is " + Cosmos.HAL.RTC.DayOfTheWeek + ", " + Cosmos.HAL.RTC.Month + " " + Cosmos.HAL.RTC.DayOfTheMonth + " "  + Cosmos.HAL.RTC.Year + " at " + Cosmos.HAL.RTC.Hour + ":" + Cosmos.HAL.RTC.Minute + ":" + Cosmos.HAL.RTC.Second;
             return final_string;
                                                                                                                                
         }
