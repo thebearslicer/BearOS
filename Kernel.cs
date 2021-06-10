@@ -10,7 +10,9 @@ namespace CosmosOS
 
         protected override void BeforeRun()
         {
-            Console.WriteLine("BearOS booted successfully!");
+            Console.WriteLine("-------------------");
+            Console.WriteLine("BearOS version 0.2");
+            Console.WriteLine("-------------------");
         }
 
         protected override void Run()
