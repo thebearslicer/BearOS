@@ -35,7 +35,16 @@ namespace CosmosOS
                     }
                     break;
                 case "shutdown":
-                    System.Environment.Exit(1);
+                    Cosmos.System.Power.Shutdown();
+                    break;
+                case "help":
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine("Command List:");
+                    Console.WriteLine("cls      : clears the screen");
+                    Console.WriteLine("time     : displays the time");
+                    Console.WriteLine("calc     : opens the calculator");
+                    Console.WriteLine("shutdown : shuts down the computer");
+                    Console.WriteLine("--------------------");
                     break;
                 default:
                     Console.WriteLine("Invalid Command");
